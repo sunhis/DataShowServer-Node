@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Admin - Chart Showcase</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrapdocs.min.css" type="text/css" rel="stylesheet" />
+
+
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+    <link href="css/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="css/jquery-ui.theme.css" type="text/css" rel="stylesheet" />
+
+    <style>
+
+        select
+        {
+            width:180px;
+        }
+
+        .table tr th{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        p { height:40px; line-height:40px;}
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+
+<!-- navbar -->
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="index.html">优品财富数据平台</a>
+        <ul class="nav pull-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end navbar -->
+<!-- end sidebar -->
+
+
+<!-- main container -->
+
+<div class="modal-body" style="max-height: 650px">
+    <div class="table-products section" style="width:200px; float:left; margin-left: 700px" >
+        <form class="form-horizontal">
+           bid:<input type="text" id="bid" />
+            column_name:  <input type="text" id="column_name"/>
+            column_desc: <input type="text" id="column_desc" />
+            stat_type:   <input type="text" id="stat_type" />
+            column_order: <input type="text" id="column_order" />
+            status:    <input type="text" id="status" />
+            last_user: <input type="text" id="last_user" />
+            <a class="btn-flat primary" id="column_submit">增加</a>
+        </form>
+    </div>
+</div>
+<!--< class="modal-body" style="max-height: 600px">
+<form class="form-horizontal">
+<div style="width:100px; float:left ">
+    <p>bid：*</p>
+    <p>column_name：*</p>
+    <p>column_desc：*</p>
+    <p>stat_type：*</p>
+    <p>column_order：*</p>
+    <p>status：*</p>
+    <p>last_user：*</p>
+
+    <p><input type="text" id="bid" /></p>
+    <p><input type="text" id="column_name"  /></p>
+    <p><input type="text" id="column_desc" /></p>
+    <p><input type="text" id="stat_type"  /></p>
+    <p><input type="text" id="column_order"  /></p>
+    <p><input type="text" id="status" /></p>
+    <p><input type="text" id="last_user" /></p>
+    <p class="btn-flat primary" id="column_submit">增加</p><br>
+</div>
+</form>
+</div>-->
+    <!-- scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/datepciker_zh.js"></script>
+    <!-- knob -->
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/column_action.js"></script>
+    <script src="Highcharts-5.0.0/js/highcharts.js">
+    </script>
+</body>
+</html>

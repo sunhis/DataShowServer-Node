@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detail Admin - Chart Showcase</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrapdocs.min.css" type="text/css" rel="stylesheet" />
+
+
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+    <link href="css/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="css/jquery-ui.theme.css" type="text/css" rel="stylesheet" />
+
+    <style>
+
+        select
+        {
+            width:210px;
+            height: 30px;
+        }
+
+        .table tr th{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+
+<!-- navbar -->
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="brand" href="index.html">优品财富数据平台</a>
+
+        <ul class="nav pull-right">
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                    当前账号：qianfeixiong
+
+                </a>
+
+            </li>
+
+        </ul>
+    </div>
+</div>
+<!-- end navbar -->
+
+<!-- sidebar -->
+<div id="sidebar-nav">
+    <ul id="dashboard-menu">
+        <li>
+
+            <a href="index.html">
+                <span>今日概况</span>
+            </a>
+        </li>
+        <li>
+            <a href="new-user.html">
+                <span>新增</span>
+            </a>
+        </li>
+        <li>
+            <a href="reg-login-user.html">
+                <span>注册登陆</span>
+            </a>
+        </li>
+        <li>
+            <a href="active-user.html">
+
+                <span>活跃</span>
+            </a>
+        </li>
+        <li>
+            <a href="startup.html">
+                <span>启动</span>
+            </a>
+        </li>
+        <li>
+            <a href="stay.html">
+                <span>留存</span>
+            </a>
+        </li>
+        <li>
+
+            <a href="error.html">
+                <span>错误</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-toggle" href="channel-count.html">
+                <span>渠道</span>
+            </a>
+
+            <ul class="submenu">
+                <li><a href="channel-mng.html" class="icon-edit">渠道管理</a></li>
+                <li><a href="channel-count.html" class="icon-signal">渠道结算</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="order.html">
+                <span>订单</span>
+            </a>
+        </li>
+
+        <li class="active">
+            <div class="pointer">
+                <div class="arrow"></div>
+                <div class="arrow_border"></div>
+            </div>
+            <a href="event.html">
+                <span>事件</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- end sidebar -->
+
+
+<div class="content">
+    <div style="margin-top: 30px;margin-left: 35px; ">
+        <form class="form-inline">
+            <label class="sr-only" for="app" >产品:</label>
+            <select id="app" class="form-control">
+                <option value="stockpc" selected="default">优品财富PC</option>
+                <option value="stock">股票</option>
+                <option value="gold">黄金</option>
+            </select>
+
+            <label class="sr-only" for="plat">平台:</label>
+            <select id="plat" class="form-control">
+                <option value="WIN">PC</option>
+            </select>
+            <label class="sr-only" for="plat">版本:</label>
+            <select id="version" class="form-control">
+                <option value="-1">ALL</option>
+            </select>
+
+            <label class="sr-only" for="channel">渠道:</label>
+            <select id="channel" class="form-control">
+                <option value="-1">ALL</option>
+            </select>
+
+            <div style="margin-top: 12px">
+
+            <label class="sr-only" for="plat">模块:</label>
+            <select id="bid" class="form-control">
+            </select>
+
+            <label class="sr-only" for="plat">事件类型:</label>
+            <select id="eventkey" class="form-control">
+            </select>
+
+            <label class="sr-only" for="plat">日期:</label>
+            <input type="text" value="" class="input-large datepicker" id="day"/>
+
+            <a class="btn-flat primary" id="btsubmit">查询</a>
+                </div>
+        </form>
+    </div>
+
+    <div class="container-fluid section" style="margin-top: 25px;margin-left: 35px; width: 90%; font-size: 18px">
+        <div id="chart">
+
+        </div>
+
+        <div id="list" class="container-fluid section" style="margin-top: 25px;font-size: 18px">
+
+        </div>
+    </div>
+
+
+</div>
+<!-- end main container -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 800px;height: 500px;display: none;">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body" style="max-height: 600px">
+                <div>
+                    开始日期:
+                    <input type="text" value="" class="input-large datepicker" id="startday"/>
+                    结束日期:
+                    <input type="text" value="" class="input-large datepicker" id="endday"/>
+                    <input type="hidden" value=""  id="hstat_type"/>
+                    <input type="hidden" value=""  id="hstat_key"/>
+                    <input type="hidden" value=""  id="hstat_sub_key"/>
+                    <button type="button" id="btsubmit2" class="btn btn-primary">查询</button>
+                </div>
+                <div id="subkeychart">
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/datepciker_zh.js"></script>
+<!-- knob -->
+<script src="js/jquery.knob.js"></script>
+<!-- flot charts -->
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/common.js"></script>
+<script src="js/event.js"></script>
+<script src="Highcharts-5.0.0/js/highcharts.js"></script>
+
+</body>
+</html>

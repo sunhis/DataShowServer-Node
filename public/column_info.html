@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Admin - Chart Showcase</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrapdocs.min.css" type="text/css" rel="stylesheet" />
+
+
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+    <link href="css/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="css/jquery-ui.theme.css" type="text/css" rel="stylesheet" />
+
+    <style>
+
+        select
+        {
+            width:180px;
+        }
+
+        .table tr th{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+
+<!-- navbar -->
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="brand" href="index.html">优品财富数据平台</a>
+        <ul class="nav pull-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end navbar -->
+<!-- end sidebar -->
+
+
+<!-- main container -->
+
+<div class="container-fluid section" style="margin-top: 25px;margin-left: 35px; width: 90%; font-size: 18px">
+    <table width="800" border="1" class="table table-striped " id="columnlist">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>BID</th>
+            <th>column名称</th>
+            <th>column内容</th>
+            <th>等级</th>
+            <th>单号</th>
+            <th>状态</th>
+            <th>最后用户</th>
+            <th>删除</th>
+            <th>修改</th>
+            <th><button id="button_bussubmit">添加</button> </th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 800px;height: 700px;display: none;">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body" style="max-height: 600px">
+                <div class="table-products section" style="margin-top: 0px">
+                    <form class="form-horizontal">
+                        <input type="hidden" id="sid"/></p><br>
+                        <p style="line-height:3px;"><input type="text" placeholder="bid" id="sbid" /></p><br>
+                        <p style="line-height:3px;"><input type="text" placeholder="column_name" id="scolumn_name"/></p><br>
+                        <p style="line-height:3px;"><input type="text" placeholder="column_desc" id="scolumn_desc" /></p><br>
+                        <p style="line-height:3px;"><input type="text" placeholder="stat_type" id="sstat_type" /></p><br>
+                        <p style="line-height:3px;"> <input type="text" placeholder="column_order" id="scolumn_order" /></p><br>
+                        <p style="line-height:3px;"> <input type="text" placeholder="status" id="sstatus" /></p><br>
+                        <p style="line-height:3px;"><input type="text" placeholder="last_user" id="slast_user" /></p><br>
+                        <a class="btn-flat primary" id="updatecolumnline">提交</a><br>
+                    </form>
+                </div>
+                <div id="subbuschart">
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!-- scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/datepciker_zh.js"></script>
+<!-- knob -->
+<script src="js/jquery.knob.js"></script>
+<!-- flot charts -->
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/common.js"></script>
+<script src="js/column_action.js"></script>
+<script src="Highcharts-5.0.0/js/highcharts.js"></script>
+</body>
+</html>

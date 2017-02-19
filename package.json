@@ -1,0 +1,30 @@
+{
+  "name": "DataShowServer",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "set DEBUG=app:*& set NODE_ENV=development& supervisor -w app.js,bin,lib,routes bin/www"
+  },
+  "dependencies": {
+    "@taf/taf-config": "^1.2.4",
+    "@taf/taf-logs": "^0.1.1",
+    "@taf/taf-rpc": "^3.1.3",
+    "@taf/taf-stream": "^3.1.2",
+    "@up/crm-helper": "^1.0.12",
+    "body-parser": "~1.15.1",
+    "compression": "^1.6.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.4.1",
+    "express": "^4.13.4",
+    "morgan": "~1.7.0",
+    "multer": "^1.2.0",
+    "mysql": "^2.11.1",
+    "request": "^2.75.0",
+    "sequelize": "^3.24.3",
+    "serve-favicon": "~2.3.0"
+  },
+  "nodeAgent": {
+    "main": "./bin/www"
+  }
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>优品数据统计平台</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+    <link href="css/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="css/jquery-ui.theme.css" type="text/css" rel="stylesheet" />
+
+    <style>
+        .form-inline .sr-only {
+            margin-left: 20px;
+        }
+
+        select
+        {
+            width:180px;
+        }
+
+        .input-large.datepicker
+        {
+            width:180px;
+            height: 15px;
+        }
+
+        .stat.checkcard
+        {
+            background-color:#a6a6a6;
+        }
+
+        [class*="span"]
+        {
+            margin-left: 0px;
+        }
+
+        .stat:hover
+        {
+            background-color:#b3b3b3;
+        }
+
+        .sta
+    </style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="brand" href="index.html">优品财富数据平台</a>
+
+            <ul class="nav pull-right">                
+
+                <li class="dropdown">
+                    <!--<a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                       当前账号：qianfeixiong
+
+                    </a>
+                    -->
+
+                </li>
+
+            </ul>            
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li class="active">
+                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+
+           <li>
+                <a href="t_stat_con_log.html">
+                    <span>con_log表信息</span>
+                </a>
+            </li>
+            <li>
+                <a href="bus_add.html">
+                    <span>Bus数据库表</span>
+                </a>
+            </li>
+            <li>
+                <a href="event-info.html">
+                    <span>Event表信息</span>
+                </a>
+            </li>
+            <li>
+                <a href="Column_info.html">
+                    <span>column表信息</span>
+                </a>
+            </li>
+            <li>
+                <a href="logname.html">
+                    <span>tmp_log_name表信息</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+      <!--  <div style="margin-top: 30px;margin-left: 35px; ">
+            <form class="action_page.php">
+                名字:<input type="text" name="lastname" value="Mouse"></br>
+                名字:<input type="text" name="lastname" value="Mouse"></br>
+                名字:<input type="text" name="lastname" value="Mouse"></br>
+                名字:<input type="text" name="lastname" value="Mouse"></br>
+                <input type="submit" value="增加">
+            </form>
+        </div>-->
+
+     <!--   <div class="table-products section" style="margin-top: 0px">
+            <form class="form-inline">
+                <label class="sr-only" for="app" >产品:</label>
+                <select id="app" class="form-control">
+                    <option value="stockpc" selected="default">优品财富PC</option>
+                    <option value="stock">股票</option>
+                    <option value="gold">黄金</option>
+                </select>
+
+                <label class="sr-only" for="plat">平台:</label>
+                <select id="plat" class="form-control">
+                    <option value="WIN">PC</option>
+                </select>
+
+                <label class="sr-only" for="plat">版本:</label>
+                <select id="version" class="form-control">
+                    <option value="-1">ALL</option>
+                </select>
+
+                <label class="sr-only" for="channel">渠道:</label>
+                <select id="channel" class="form-control">
+                    <option value="-1">ALL</option>
+                </select>
+                <label class="sr-only" for="plat">开始日期:</label>
+                <input type="text" value="" class="input-large datepicker" id="startday" />
+
+                <label class="sr-only" for="plat">结束日期:</label>
+                <input type="text" value="" class="input-large datepicker" id="endday"/>
+
+                <a class="btn-flat primary" id="btsubmit">查询</a>
+
+            </form>
+
+            </div>-->
+
+          <!--  &lt;!&ndash; upper main stats &ndash;&gt;
+            <div id="main-stats">
+                <div class="stats-row" style="margin-left: 30px">
+                    <div class="span1 stat checkcard" style="margin-left:40px;">
+                        <div class="data">
+                            <span> 新增</span></br>
+                            <span class="number" id="lnewall">0</span>
+                        </div>
+                    </div>
+                    <div class="span1 stat" >
+                        <div class="data">
+                            <span>新增（去重）</span></br>
+                            <span class="number" id="lnew">0</span>
+                        </div>
+
+                    </div>
+                    <div class="span1 stat" >
+                        <div class="data" >
+                            <span>版本更新</span></br>
+                            <span class="number" id="lupdate">0</span>
+                        </div>
+                    </div>
+                    <div class="span1 stat ">
+                        <div class="data">
+                            <span>活跃</span></br>
+                            <span class="number" id="lactive">0</span>
+                        </div>
+                    </div>
+
+                    <div class="span1 stat">
+                        <div class="data">
+                            <span>注册</span></br>
+                            <span class="number">0</span>
+                        </div>
+                    </div>
+                    <div class="span1 stat">
+                        <div class="data">
+                            <span>登陆</span></br>
+                            <span class="number">0</span>
+                        </div>
+                    </div>
+
+                    <div class="span1 stat">
+                        <div class="data">
+                            <span>启动</span></br>
+                            <span class="number">0</span>
+                        </div>
+                    </div>
+
+                    <div class="span2 stat last">
+                        <div class="data">
+                            <span>完成订单</span></br>
+                            <span class="number">0</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>-->
+            <!-- end upper main stats -->
+
+            <div id="pad-wrapper">
+
+                <!-- statistics chart built with jQuery Flot -->
+                <div class="row-fluid chart section">
+                    <div class="span12">
+                        <div id="statsChart"></div>
+                    </div>
+                </div>
+                <!-- end statistics chart -->
+             </div>
+
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/datepciker_zh.js"></script>
+    <!-- knob -->
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    <script src="Highcharts-5.0.0/js/highcharts.js"></script>
+
+</body>
+</html>
